@@ -1,0 +1,36 @@
+<div class='search-bar '>
+  <div class='search-inputs'>
+    <form [formGroup]="searchForm">
+      <input
+        type='text'
+        name="filteredSearch"
+        [(ngModel)]="filteredSearch"
+        id=""
+        formControlName="search"
+        placeholder='Search...'
+      />
+    </form>
+    <a (click)="closeSearchBar()">
+      <img [src]="animalSerchList.length===0 ||
+      searchForm.value.search==='' ?
+       '../../../assets/search-svg.svg':
+       '../../../assets/close-search.svg'"
+       class='w-[25px] h-[25px]'>
+    </a>
+
+  </div>
+  <ng-container *ngIf="animalSerchList.length && searchForm.value.search!==''">
+    <div class='dataResult'>
+      <div  *ngFor="let animal of animalSerchList">
+        <ul>
+           <li>
+             <a (click)="service.openDetail(animal)" (click)="closeSearchBar()">
+               {{animal.name}}
+             </a>
+           </li>
+        </ul>
+      </div>
+    </div>
+  </ng-container>
+
+</div>

@@ -1,0 +1,10 @@
+<div class="flex items-center justify-between p-6 bg-[#2b2b2b] h-[5rem]">
+  <h1 class="text-red-600 font-bold text-[1.5rem] cursor-pointer" [routerLink]="['/']"  >IMMERZOO</h1>
+  <app-serchbar></app-serchbar>
+  <a (click)="OpenLike()" >
+    <img class="w-5 h-5 " [src]="animalLike.length===0 ? emplyHeart : fullHeart" />
+  </a>
+</div>
+<app-like *ngIf="openLike===true"  [(openLike)]="openLike" [ngClass]="{'bg-change': openLike===true}"></app-like>
+
+

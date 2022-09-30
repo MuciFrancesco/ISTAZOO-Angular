@@ -1,0 +1,7 @@
+<div  class='bg-[#3c3c3c] h-[100%]' >
+  <app-topbar></app-topbar>
+
+    <app-card *ngIf="animal$ | async as animal" class="flex flex-wrap flex justify-between h-[85%]" [animal]="animal$ |async" ></app-card>
+
+  <app-footer ></app-footer>
+</div>

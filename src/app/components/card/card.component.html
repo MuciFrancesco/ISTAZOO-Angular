@@ -1,0 +1,24 @@
+
+<div *ngFor="let animal of animal;let i=index" class=" flex flex-col w-[20%]  box-border bg-[#242424] border-[2px] border-[#000000] text-white m-6 h-[400px] ">
+  <div class="h-[60%]">
+    <img
+      src={{animal.image_link}}
+      class="h-[100%] w-full object-cover ">
+  </div>
+  <div class="p-[15px]  h-[40%] flex flex-col justify-between">
+    <div>
+      <h1 class="text-xl">{{animal.name}}</h1>
+      <p class="">{{animal.geo_range}}</p>
+    </div>
+    <button (click)="openDetail(animal)"
+      class="bg-[red] flex justify-center  mr-[20%] ml-[20%] w-[60%] rounded" >
+      Dettagli
+    </button>
+  </div>
+</div>
+
+<app-card-detail
+*ngIf="openDetails | async">
+</app-card-detail>
+
+

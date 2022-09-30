@@ -1,0 +1,40 @@
+<div class="bg-[#393636]/[.98] h-screen text-white">
+  <figure class="logo absolute z-[1] w-[15rem] h-[15rem] top-[45%] left-1/2 ">
+    <img
+      class="rounded-full border-solid border-2 border-[#cbd5e1]"
+      src="../../../assets/Logo.png"
+      alt="Logo"
+    />
+  </figure>
+
+  <div class="w-full flex  h-[45%]">
+    <div class="flex flex-col basis-2/4 p-8">
+      <h1 class="logo-text">IMMERZOO</h1>
+      <h2 class="sub-logo-text mt-4 ml-36 ">DIVERTIMENTO ASSICURATO</h2>
+    </div>
+    <div class="basis-2/4 w-full">
+      <img
+        class="w-full h-full object-cover"
+        src="../../../assets/pappagallo-1.jpg"
+        alt="pappagallo"
+      />
+    </div>
+  </div>
+
+  <div class="w-full flex h-[45%]">
+    <div class="basis-2/4 w-full">
+      <img
+        class="w-full h-full object-cover"
+        src="../../../assets/pantera-bianca.jpg"
+        alt="pantera"
+      />
+    </div>
+    <div class="w-1/2 flex flex-col items-center justify-center">
+      <h2 class=" text-[18px] mb-8">SCOPRI IL NOSTRO NUOVO SOCIAL!</h2>
+        <button class="bg-[red] w-40  rounded h-12 text-[20px] font-bold font-sans hover:bg-red-600" [routerLink]="['/home']">
+          Visita
+        </button>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

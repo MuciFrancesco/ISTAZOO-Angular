@@ -1,0 +1,31 @@
+
+<div [ngClass]="{'bg-change': openDetails | async}" (click)="closeDetails()"></div>
+<div class="detail  flex  w-[750px] h-[500px] z-10  absolute top-[50%] left-[50%]">
+<div class="desc flex">
+  <div class="desc-img w-[60%]">
+    <img
+      class="w-full h-full object-cover"
+      src="{{singleAnimal.image_link}}"
+    >
+  </div>
+  <div class="desc-tex p-2 relative w-[40%]">
+    <h3 class="text-white text-[25px] pt-8 pr-6 pl-6">{{singleAnimal.name}}</h3>
+    <div class="single-animal-text  text-white  text-[15px] pr-6 pl-6	 pt-8">
+      <p>- Active Time: {{singleAnimal.active_time}} </p>
+      <p>- Animal Type: {{singleAnimal.animal_type}} </p>
+      <p>- Diet: {{singleAnimal.diet}}</p>
+      <p>- Weight Max: {{singleAnimal.length_max}}</p>
+      <p>- Weight Min: {{singleAnimal.length_min}}</p>
+      <p>- Max Life: {{singleAnimal.lifespan}}</p>
+      <p>- Habitat: {{singleAnimal.habitat}}</p>
+    </div>
+    <a class="absolute top-[15px]  left-[255px] w-[100%]" (click)="closeDetails()">
+      <img class="w-[25px] h-[25px] cursor-pointer" src="../../assets/close.svg">
+    </a>
+    <a class="heart-outer absolute bottom-[20px] left-[248px] w-[100%] " (click)="addLikes(singleAnimal)">
+      <img class=" w-[30px] h-[30px] cursor-pointer  " [src]="someArray(singleAnimal) ? fullHeart: emplyHeart">
+    </a>
+  </div>
+</div>
+
+

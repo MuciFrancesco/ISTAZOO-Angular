@@ -1,0 +1,24 @@
+<div  class="like-container bg-[#3C3C3C] p-4 text-white flex flex-col gap-2 top-[50%] left-[50%] z-10">
+  <h2  class="text-xl flex justify-center items-center ">Preferiti</h2>
+  <div  *ngIf="animalLike?.length !== 0">
+    <div  *ngFor="let arrays of animalLike" class="like flex border-[grey] border-y-2 justify-between items-center h-[5rem] z-10">
+      <div class="flex h-[100%] gap-3">
+        <img
+          class="w-[8rem] h-[100%] object-cover"
+          src="{{arrays.image_link}}"
+        >
+        <h4 class=" self-center">{{arrays.name}}</h4>
+      </div>
+      <a   (click)="deleteLike(arrays)" >
+        <img src="../../assets/basket.svg">
+      </a>
+    </div>
+  </div>
+  <h1 *ngIf="animalLike.length ===0">Add favorite to display it!</h1>
+
+
+  <button class="bg-[red] w-20 self-center rounded mt-8 text-[15px]  font-sans hover:bg-red-600" (click)="closeLike()">
+    Chiudi
+  </button>
+</div>
+
